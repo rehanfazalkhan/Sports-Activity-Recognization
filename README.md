@@ -1,5 +1,9 @@
-# Sports-Activity-Recognization (Tensorflow GPU, ResNET 50, OpenCV)
+# Sports-Activity-Recognization (Tensorflow 2 GPU, ResNET 50, OpenCV)
 When performing image classification, we:  1-Input an image to our CNN    2- Obtain the predictions from the CNN    3- Choose the label with the largest corresponding probability  Since a video is just a series of frames, 4-a naive video classification method would be to:Loop over all frames in the video file   5- For each frame, pass the frame through the CNN   6-  Classify each frame individually and independently of each other     
 Choose the label with the largest corresponding probability     Label the frame and write the output frame to disk There’s a problem with this approach though — if you’ve ever tried to apply simple image classification to video classification you likely encountered a sort of “prediction flickering” as seen in the video at the top of this section. Notice how in this visualization we see our CNN shifting between two predictions: “football” and the correct label, “weight_lifting”. 
 The video is clearly of weightlifting and we would like our entire video to be labeled as such — but how we can prevent the CNN “flickering” between these two labels?  A simple, yet elegant solution, is to utilize a rolling prediction average.  Our algorithm now becomes:   
 Loop over all frames in the video file     For each frame, pass the frame through the CNN     Obtain the predictions from the CNN     Maintain a list of the last K predictions     Compute the average of the last K predictions and choose the label with the largest corresponding probability     Label the frame and write the output frame to disk  The results of this algorithm can be seen in the video at the very top of this post — notice how the prediction flickering is gone and the entire video clip is correctly labeled!
+
+
+
+# for datasets email me i will share drive datasets link- rehanfazalkhan@gmail.com
